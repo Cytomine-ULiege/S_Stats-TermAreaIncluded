@@ -1,0 +1,96 @@
+{
+  "name": "Stats-TermAreaIncluded",
+  "description": "A Cytomine software to count and compute area of annotations associated to a given term, included in a larger annotation (region of interest). Results are stored in a Cytomine property linked to the region of interest.",
+  "schema-version": "cytomine-0.1",
+  "container-image": {
+    "image": "cytomine-uliege/s_stats-termareaincluded",
+    "type": "singularity"
+  },
+  "command-line": "run.groovy CYTOMINE_HOST CYTOMINE_PUBLIC_KEY CYTOMINE_PRIVATE_KEY CYTOMINE_ID_PROJECT CYTOMINE_ID_SOFTWARE CYTOMINE_ID_ANNOTATION CYTOMINE_ID_TERM CYTOMINE_REVIEWED_ONLY ",
+  "inputs": [
+    {
+      "name": "Cytomine host",
+      "description": "Cytomine server hostname",
+      "set-by-server": true,
+      "value-key": "@ID",
+      "optional": false,
+      "id": "cytomine_host",
+      "type": "String",
+      "command-line-flag": ""
+    },
+    {
+      "name": "Cytomine public key",
+      "description": "Cytomine public key",
+      "set-by-server": true,
+      "value-key": "@ID",
+      "optional": false,
+      "id": "cytomine_public_key",
+      "type": "String",
+      "command-line-flag": ""
+    },
+    {
+      "name": "Cytomine private key",
+      "description": "Cytomine private key",
+      "set-by-server": true,
+      "value-key": "@ID",
+      "optional": false,
+      "id": "cytomine_private_key",
+      "type": "String",
+      "command-line-flag": ""
+    },
+    {
+      "name": "Cytomine project id",
+      "description": "Cytomine project id",
+      "set-by-server": true,
+      "value-key": "@ID",
+      "optional": false,
+      "id": "cytomine_id_project",
+      "type": "Number",
+      "command-line-flag": ""
+    },
+    {
+      "name": "Cytomine software id",
+      "description": "Cytomine software id",
+      "set-by-server": true,
+      "value-key": "@ID",
+      "optional": false,
+      "id": "cytomine_id_software",
+      "type": "Number",
+      "command-line-flag": ""
+    },
+    {
+      "name": "Region of interest",
+      "description": "Annotation used as region of interest",
+      "set-by-server": false,
+      "value-key": "@ID",
+      "optional": false,
+      "id": "cytomine_id_annotation",
+      "type": "Domain",
+      "command-line-flag": ""
+    },
+    {
+      "name": "Term to analyze",
+      "description": "Only included annotations associated to this term are taken into account",
+      "set-by-server": false,
+      "value-key": "@ID",
+      "optional": false,
+      "id": "cytomine_id_term",
+      "type": "Domain",
+      "command-line-flag": "",
+      "uri": "/api/ontology/$currentOntology$/term.json",
+      "uri-print-attribute": "name",
+      "uri-sort-attribute": "name"
+    },
+    {
+      "default-value": "false",
+      "name": "Reviewed included annotations only",
+      "description": "Only consider reviewed annotations that are included in the region of interest",
+      "set-by-server": false,
+      "value-key": "@ID",
+      "optional": false,
+      "id": "cytomine_reviewed_only",
+      "type": "Boolean",
+      "command-line-flag": ""
+    }
+  ]
+}
