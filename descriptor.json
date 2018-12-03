@@ -3,7 +3,7 @@
   "description": "A Cytomine software to count and compute area of annotations associated to a given term, included in a larger annotation (region of interest). Results are stored in a Cytomine property linked to the region of interest.",
   "schema-version": "cytomine-0.1",
   "container-image": {
-    "image": "cytomine-uliege/s_stats-termareaincluded",
+    "image": "cytomineuliege/s_stats-termareaincluded",
     "type": "singularity"
   },
   "command-line": "run.groovy CYTOMINE_HOST CYTOMINE_PUBLIC_KEY CYTOMINE_PRIVATE_KEY CYTOMINE_ID_PROJECT CYTOMINE_ID_SOFTWARE CYTOMINE_ID_ANNOTATION CYTOMINE_ID_TERM CYTOMINE_REVIEWED_ONLY ",
